@@ -2,6 +2,8 @@ drop database if exists drzavnauprava;
 create database drzavnauprava default character set utf8;
 use drzavnauprava;
 
+# c:\xampp\mysql\bin\mysql.exe -uedunova -pedunova --default-character-set=utf8 < d:\drzavnauprava.sql
+
 create table zupanija(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
@@ -40,4 +42,4 @@ create table zupanija(
 
     update mjesto set naziv='Eminovci' where sifra=1;
 
-    delete mjesto where sifra=1;
+    delete from mjesto where sifra=1;
