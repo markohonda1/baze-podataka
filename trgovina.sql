@@ -1,5 +1,5 @@
 drop database if exists trgovina;
-create database trgovina;
+create database trgovina default character set utf8;
 use trgovina;
 
 create table racun(
@@ -32,3 +32,24 @@ alter table racun add foreign key (operater) references operater (sifra);
 
 alter table stavka add foreign key (racun) references racun(sifra);
 alter table stavka add foreign key (proizvod) references proizvod(sifra);
+
+
+insert into proizvod(naziv,cijena) values
+('Knjiga',599.99),('Žvake',4.99),('Salama',7.99);
+
+insert into stavka(racun,proizvod,kolicina) values
+(1,1,3.13),(2,2,0.4),(3,3,1);
+
+insert into operater(ime,prezime,email) values
+('Josip','Ester','jokaester@gmail.com'),('Ivan','Ivanko','ivanko8@gmail.com'),('Tomislav','Baša','basko45@gmail.com');
+
+update operater set ime='Marko' where sifra=1;
+update operater set prezime='Ivanko' where sifra=3;
+
+update proizvod set cijena=3.59 where sifra=2;
+
+update stavka set racun=4 where sifra=1;
+
+delete from operater where sifra=1;
+
+delete from proizvod where sifra=2;
