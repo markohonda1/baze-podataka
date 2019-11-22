@@ -2,6 +2,9 @@ drop database if exists javaProgramiranje21;
 create database javaProgramiranje21 default character set utf8;
 use javaProgramiranje21;
 
+
+# c:\xampp\mysql\bin\mysql.exe -uedunova -pedunova --default-character-set=utf8 < d:\javaProgramiranj21.sql
+
 create table grupa(
     sifra int not null primary key auto_increment,
     naziv varchar(60) not null,
