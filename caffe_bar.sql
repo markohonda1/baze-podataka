@@ -29,7 +29,7 @@ create table piće(
 create table dobavljač(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
-    adresa varchar(40)
+    adresa varchar(40) not null
 );
 
 alter table racun add foreign key(zaposlenik) references zaposlenik(sifra);
