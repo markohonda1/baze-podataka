@@ -15,7 +15,7 @@ create table zaposlenik(
 create table racun(
     sifra int not null primary key auto_increment,
     zaposlenik int not null,
-    datVrijeme datetime,
+    datVrijeme datetime not null,
     brRacuna int 
 );
 
