@@ -34,4 +34,5 @@ create table dobavljac(
 );
 
 alter table racun add foreign key(zaposlenik) references zaposlenik(sifra);
-alter table racun add foreign key(pice) references pice(sifra);
+
+alter table pice add foreign key(dobavljac) references dobavljac(sifra);
