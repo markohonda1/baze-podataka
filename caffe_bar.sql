@@ -16,22 +16,22 @@ create table racun(
     sifra int not null primary key auto_increment,
     zaposlenik int not null,
     datVrijeme datetime,
-    piće int not null
+    brRacuna int 
 );
 
-create table piće(
+create table pice(
     sifra int not null primary key auto_increment,
     količina decimal(18,3),
     vrsta varchar(20) not null,
-    cijena decimal(18,3) not null
+    cijena decimal(18,3) not null,
+    dobavljac int not null
 );
 
-create table dobavljač(
+create table dobavljac(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null,
     adresa varchar(40) not null
 );
 
 alter table racun add foreign key(zaposlenik) references zaposlenik(sifra);
-alter table racun add foreign key(piće) references piće(sifra);
-
+alter table racun add foreign key(pice) references pice(sifra);
